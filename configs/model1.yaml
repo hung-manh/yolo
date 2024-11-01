@@ -1,0 +1,36 @@
+# Data Augmentation
+# When training a YOLO model, Ultralytics automatically augments the images to improve the training process.
+# The following data augmentation techniques are available [3]:
+
+#     hsv_h=0.015: The HSV settings help the model generalize during different conditions, such as lighting and environment. The H stands for hue.
+#     hsv_s=0.7: Adjusts the saturation of the image.
+#     hsv_v=0.4: Adjusts the brightness of the image.
+#     degrees=0.0: Rotates the image randomly within a specified range.
+#     translate=0.1: Moves the image horizontally or vertically, helps detect partially visible objects.
+#     scale=0.5: Scales the image, which is good for detecting objects at different distances.
+#     shear=0.0: Shears the image, shifting the parallel lines in a rectangular image. Improves the model for objects viewed at different angles.
+#     perspective=0.0: Applies a random perspective to the image.
+#     flipud=0.0: Flips the image upside down.
+#     fliplr=0.0 : Flip the image from left to right.
+#     bgr=0.0: Guards against incorrect channel ordering. This shouldn't be used if the dataset or real-world data is assumed to be correct.
+#     mosaic=1.0: Combines four images into a 2x2 image. Great for improving scene understanding and performance.
+#     erasing=0.4: Erasing a percentage of the scene. Making the model better at predicting hidden objects or partially visible objects.
+#     crop_fraction=1.0: Crops a fraction of the image.
+
+#     -----------------------------------------------------------------------------
+#     mixup=0.0: Creates a composite image by combining two images and their labels.
+#     copy_paste=0.0: Copy and paste images into different scenes.
+
+# config.yaml
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+degrees: 10.0
+translate: 0.1
+scale: 0.5
+shear: 0.0
+perspective: 0.0
+flipud: 0.5
+fliplr: 0.5
+mosaic: 1.0
+erasing: 0.4
